@@ -31,4 +31,4 @@ def read_sensor(max_attempts=5):
 while True:
         temperature, humidity = read_sensor()
         print(f"Temperatur: {temperature}°C | Humidity: {humidity}")
-        time.sleep(2.0)
+        time.sleep(10.0)
