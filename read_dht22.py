@@ -42,9 +42,9 @@ def insert_data(temperature, humidity):
         conn = psycopg2.connect(**db_params)
         cursor = conn.cursor() # necessary for SQL commands
         insert_query = """
-        INSERT INTO RaspberryPi_Weather_Station.dht22 (temperature, humidity)
+        INSERT INTO raspi_weather.dht22 (temperature, humidity)
         VALUES (%s, %s);
-        """
+        """ 
         cursor.execute(insert_query, (temperature, humidity))
         conn.commit()
         cursor.close()
