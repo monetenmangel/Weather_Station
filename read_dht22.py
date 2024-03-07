@@ -59,4 +59,4 @@ while True:
     print(f"Temperature: {temperature}°C | Humidity: {humidity}%")
     insert_data(temperature, humidity)
     print("Data have been inserted")
-    time.sleep(10.0)
+    time.sleep(20.0)
