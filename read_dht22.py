@@ -33,8 +33,9 @@ def read_sensor(max_attempts=15):
 
         except RuntimeError as error:
             print(f"{datetime.now()}: {error}")
+            time.sleep(2)
 
-        raise Exception(f"Sensor failed more than {max_attempts} times.")
+        return None, None #indicate, that reading failed, even after all attempts
 
 def insert_data(temperature, humidity):
     conn = None
@@ -56,7 +57,10 @@ def insert_data(temperature, humidity):
 
 while True:
     temperature, humidity = read_sensor()
-    print(f"Temperature: {temperature}°C | Humidity: {humidity}%")
-    insert_data(temperature, humidity)
-    print("Data have been inserted")
+    if temperature is not None and humidity is not None:
+        print(f"Temperature: {temperature}°C | Humidity: {humidity}%")
+        insert_data(temperature, humidity)
+        print("Data have been inserted")
+    else:
+        print("Failed to read data from the sensor. Will try again")
     time.sleep(20.0)
