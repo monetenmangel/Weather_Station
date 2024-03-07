@@ -14,7 +14,7 @@ dht_device = adafruit_dht.DHT22(board.D4)
 
 # declare functions
 
-def read_sensor(max_attempts=5):
+def read_sensor(max_attempts=15):
     """
     Read the DHT22 Sensor and store the results in 2 seperate variables (temperature, humidity)
 
