@@ -51,7 +51,7 @@ def insert_data(temperature, humidity):
     except (Exception, psycopg2.DatabaseError) as error:
         print(error)
     finally:
-        if conn is not null:
+        if conn is not None:
             conn.close()
 
 while True:
