@@ -58,9 +58,9 @@ def insert_data(temperature, humidity):
 while True:
     temperature, humidity = read_sensor()
     if temperature is not None and humidity is not None:
-        # print(f"Temperature: {temperature}°C | Humidity: {humidity}%")
+        print(f"Temperature: {temperature}°C | Humidity: {humidity}%")
         insert_data(temperature, humidity)
-        # print("Data have been inserted")
+        print("Data have been inserted")
     else:
         print("Failed to read data from the sensor. Will try again")
     time.sleep(60.0)
