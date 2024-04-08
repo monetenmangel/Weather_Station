@@ -10,7 +10,7 @@ from postgres_config import db_params
 
 # declare variables
 
-dht_device = adafruit_dht.DHT22(board.D5)
+dht_device = adafruit_dht.DHT22(board.D17)
 
 # declare functions
 
