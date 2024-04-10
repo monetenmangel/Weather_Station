@@ -63,4 +63,4 @@ while True:
         print("Data have been inserted")
     else:
         print("Failed to read data from the sensor. Will try again")
-    time.sleep(60.0)
+    time.sleep(20.0)
